@@ -1,20 +1,17 @@
 # current app ppints to config in app.py
 from flask import Blueprint, jsonify, request, render_template, current_app
+from bitcoin import *
+from web_app.make_address import make_address
 
 #
 # ROUTING
 #
 
-routes = Blueprint("routes", __name__)
+this = Blueprint("this", __name__)
 
-# method decorators
-# above our normal looking function, it specifies a route or url path
-# each def needs to be unique for this to work
-@routes.route("/")
+@this.route("/", methods=['POST', 'GET'])
 def index():
-    # return "Example"
-    return render_template("index.html")
+    
+    address = make_address()
 
-@routes.route("/about")
-def about():
-    return "About Me"
+    return render_template('index.html', address=address)

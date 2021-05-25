@@ -1,2 +1,2 @@
 # pybit_wallet
-Flask App Bitcoin Wallet
+Flask App Bitcoin Wallet Generator

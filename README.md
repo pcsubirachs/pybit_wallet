@@ -1,4 +1,4 @@
-# Pybit
+# PyBit
 
 ## An open-source python Flask app to generate simple, multi-sig, and brain phrase Bitcoin wallets
 

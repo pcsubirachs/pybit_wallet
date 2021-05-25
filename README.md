@@ -8,15 +8,15 @@
 
 ### Creating a simple Bitcoin wallet
 
-<img src="https://github.com/pcsubirachs/pybit_wallet/media/simple.jpeg" alt="drawing" align="middle" width="800"/>
+<img src="https://github.com/pcsubirachs/pybit_wallet/blob/main/media/simple.jpeg" alt="drawing" align="middle" width="800"/>
 
 ### Create a K of N multi-sig wallet
 
-<img src="https://github.com/pcsubirachs/pybit_wallet/media/K_of_N.jpeg" alt="drawing" align="middle" width="800"/>
+<img src="https://github.com/pcsubirachs/pybit_wallet/blob/main/media/K_of_N.jpeg" alt="drawing" align="middle" width="800"/>
 
 ### Create a brain phrase wallet
 
-<img src="https://github.com/pcsubirachs/pybit_wallet/media/brain_phrase.jpeg" alt="drawing" align="middle" width="800"/>
+<img src="https://github.com/pcsubirachs/pybit_wallet/blob/main/media/brain_phrase.jpeg" alt="drawing" align="middle" width="800"/>
 
 ## Link to App
 [PyBit: An open-source Bitcoin wallet generator](https://github.com/pcsubirachs/pybit_wallet "PyBit")

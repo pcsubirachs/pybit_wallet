@@ -4,7 +4,7 @@
 
 ### Home Page
 
-<img src="https://github.com/pcsubirachs/pybit_wallet/media/home_page.jpeg " alt="drawing" align="middle" width="800"/>
+<img src="https://github.com/pcsubirachs/pybit_wallet/blob/main/media/home_page.jpeg " alt="drawing" align="middle" width="800"/>
 
 ### Creating a simple Bitcoin wallet
 

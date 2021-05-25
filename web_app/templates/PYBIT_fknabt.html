@@ -1,0 +1,303 @@
+<!--
+
+=========================================================
+* Pixel Free Bootstrap 5 UI Kit
+=========================================================
+
+* Product Page: https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Contact us if you want to remove it.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Primary Meta Tags -->
+<title>
+    Bitcoin Wallet Generator
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Pixel - Free Bootstrap 5 UI Kit">
+<meta name="author" content="Themesberg">
+<meta name="description" content="Open source and free Bootstrap 5 UI Kit featuring 80 UI components, 5 example pages, and a Gulp and Sass workflow.">
+<link rel="canonical" href="https://appseed.us/apps/flask-apps/flask-pixel-bootstrap-uikit">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demo.themesberg.com/pixel-bootstrap-5-ui-kit">
+<meta property="og:title" content="Pixel - Free Bootstrap 5 UI Kit">
+<meta property="og:description" content="Open source and free Bootstrap 5 UI Kit featuring 80 UI components, 5 example pages, and a Gulp and Sass workflow.">
+<meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/pixel-lite/pixel-lite-preview.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://demo.themesberg.com/pixel-bootstrap-5-ui-kit">
+<meta property="twitter:title" content="Pixel - Free Bootstrap 5 UI Kit">
+<meta property="twitter:description" content="Open source and free Bootstrap 5 UI Kit featuring 80 UI components, 5 example pages, and a Gulp and Sass workflow.">
+<meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/pixel-lite/pixel-lite-preview.jpg">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="/static/assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Pixel CSS -->
+<link type="text/css" href="/static/assets/css/pixel.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    {% include 'includes/navigation.html' %}
+
+    <main>
+
+        {% include 'includes/preloader.html' %}
+
+        <!-- Hero -->
+        <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="bootstrap-big-icon d-none d-lg-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="700" height="622" class="d-block my-1"
+                                viewBox="0 0 118 94" role="img">
+                                <title>Bootstrap</title>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </div><br>
+                        <h1 class="fw-bolder display-2">
+                            BITCOIN WALLET GENERATOR
+                        </h1><br>
+                        <h2 class="lead fw-normal text-muted mb-4 px-lg-10">
+                            An open-source Python Flask Application to generate bitcoin wallets, multi-sig wallets, and brain phrase wallets
+                        </h2><br><br><br>
+                        <!-- Button Modal
+                        <div class="d-flex justify-content-center align-items-center mb-5">
+                            <a href="#components" class="btn btn-tertiary mb-3 mt-2 me-2 me-md-3 animate-up-2"><span
+                                    class="fas fa-th-large me-2"></span> <span class="d-none d-md-inline">Get Started</span> 
+                                    <span class="d-md-none">Components</span></a>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <!-- removed theme link-->
+            <!-- removed image collab-->
+        </section>
+
+        <div class="section py-0">
+            <div class="container mt-n10 mt-lg-n12 z-2">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10"><img src="/static/assets/img/btc-wallet-1.jpeg"
+                            alt="Pixel Free Mockup"></div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="section section-sm pb-0 mb-n4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Create a Wallet</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section -->
+        <div class="section section-md">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Tab Nav -->
+                        <div class="nav-wrapper position-relative mb-2">
+                            <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-text-1-tab" data-bs-toggle="tab"
+                                        href="#tabs-text-1" role="tab" aria-controls="tabs-text-1" aria-selected="true">Simple</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-bs-toggle="tab"
+                                        href="#tabs-text-2" role="tab" aria-controls="tabs-text-2"
+                                        aria-selected="false">Multi-Sig</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab" data-bs-toggle="tab"
+                                        href="#tabs-text-3" role="tab" aria-controls="tabs-text-3"
+                                        aria-selected="false">Brain Phrase</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End of Tab Nav -->
+                        <!-- Tab Content --> 
+                        <div class="card border-0">
+                            <div class="card-body p-0">
+                                <div class="tab-content" id="tabcontent1">
+                                    <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel"
+                                        aria-labelledby="tabs-text-1-tab">
+                                        <p><strong>Simple bitcoin wallets are easy.</strong> The simple wallet generates
+                                            a bitcoin wallet with a seed phrase, private key, public key, and a bitcoin 
+                                            wallet address. A seed phrase allows you to backup your Bitcoin from anywhere. 
+                                            A private key is derived from your seed. A public key is derived from your private
+                                            key using a SHA256 one-way cryptographic algorithm. A bitcoin wallet is a compressed
+                                            form of your public key.
+                                        </p>
+    
+                                        <button class="btn btn-outline-info" type="button">Generate</button>
+                                        
+                                            <br><br>
+                                            
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Private Key :</strong> {priv}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Public Key :</strong> {pub}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Bitcoin Wallet Address :</strong> {btc_add}
+                                            </div>                      
+
+                                    </div>
+                                    <div class="tab-pane fade" id="tabs-text-2" role="tabpanel"
+                                        aria-labelledby="tabs-text-2-tab">
+                                        <p>Create an N of K multi sig wallet.</p>
+
+                                        <div class="mb-3">
+                                            <label class="my-1 me-2" for="inlineFormCustomSelectPref">Choose N wallets needed to sign.</label>
+                                            <select class="form-select" id="inlineFormCustomSelectPref" aria-label="Default select example">
+                                                <option selected>...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="my-1 me-2" for="inlineFormCustomSelectPref">Choose K wallets in total.</label>
+                                            <select class="form-select" id="inlineFormCustomSelectPref" aria-label="Default select example">
+                                                <option selected>...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-outline-info" type="button">Generate</button>
+                                        
+                                        <br><br>
+                                            
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Private Key #1 :</strong> {priv}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Public Key #1 :</strong> {pub}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Bitcoin Wallet Address #1 :</strong> {btc_add}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Private Key #2 :</strong> {priv}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Public Key #2 :</strong> {pub}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Bitcoin Wallet Address #2 :</strong> {btc_add}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Private Key #3 :</strong> {priv}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Public Key #3 :</strong> {pub}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Bitcoin Wallet Address #3 :</strong> {btc_add}
+                                            </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="tabs-text-3" role="tabpanel"
+                                        aria-labelledby="tabs-text-3-tab">
+                                        <p>A brain phrase wallet allows you to use phrase memorization to create a wallet and 
+                                            cross borders with billions in your head.</p>
+                                        <div class="mb-3">
+                                            <textarea class="form-control" placeholder="Enter your unique phrase..." id="exampleFormControlTextarea1"
+                                                rows="4"></textarea>
+                                        </div>
+                                        <button class="btn btn-outline-info" type="button">Generate</button> 
+
+                                        <br><br>
+                                            
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Private Key :</strong> {priv}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Public Key :</strong> {pub}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Bitcoin Wallet Address :</strong> {btc_add}
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Tab Content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Section -->
+
+        <section class="section section-lg bg-white" id="download">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <h2 class="h1 font-weight-light mb-3"><strong>Open source</strong> project</h2>
+                        <p class="lead mb-4">Contribute to the project on Github! Our goal is to make Flask applications more accessible to the Bitcoin community at large. 
+                            We wanted to create a simple example for developers of a wallet generator to build off of and play with, while also giving users an easy way to generate wallets.</p>
+                        <div class="d-flex align-items-center">
+                            <a href="https://github.com/pcsubirachs/pybit_wallet" target="_blank"
+                                class="btn btn-github me-4 animate-up-2">
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="github-big-icon">
+                            <span class="fab fa-github"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    {% include 'includes/scripts.html' %}
+
+</body>
+</html>

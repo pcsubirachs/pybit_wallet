@@ -10,6 +10,9 @@ pybitcoin = "*"
 python-dotenv = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
+jinja2 = "*"
+gunicorn = "*"
+flask = "*"
 
 [requires]
 python_version = "3.8"

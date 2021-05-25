@@ -55,3 +55,13 @@ def make_address():
     address = pubtoaddr(public_key)
     
     return address
+
+def bp(phrase):
+    # generate private key from input
+    bp.priv_key_brain = sha256(phrase)
+    # generate public key from your private key
+    bp.pub_key_brain = privtopub(priv_key_brain)
+    # then create a readable Bitcoin address
+    bp.add_brain = pubtoaddr(pub_key_brain)
+
+    return bp.add_brain, bp.priv_key_brain, bp.pub_key_brain

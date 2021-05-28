@@ -12,13 +12,19 @@ this = Blueprint("this", __name__)
 
 @this.route("/", methods=['POST', 'GET'])
 def index():
-    
-    address = make_address()
 
-    return render_template('PYBIT_index.html', address=address)
+    # generate private key
+    private_key = random_key()
+    # convert private key to public key
+    public_key = privtopub(private_key)
+    # then, create a readable Bitcoin address
+    address = pubtoaddr(public_key)
+
+    return render_template('index.html', private_key=private_key, public_key=public_key, address=address)
 
 @this.route("/", methods=['POST', 'GET'])
 def brain():
+    
     #user input here
     phrase = request.form['user_phrase']
     # generate private key from input
@@ -28,7 +34,7 @@ def brain():
     # then create a readable Bitcoin address
     brain = pubtoaddr(pub_key_brain)
 
-    return render_template('PYBIT_index.html', brain=brain)
+    return render_template('index.html', private_key=private_key, public_key=public_key, brain=brain)
 
 @this.route("/fknabt", methods=['POST', 'GET'])
 def jinja():

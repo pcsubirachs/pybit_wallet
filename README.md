@@ -39,19 +39,23 @@ Description here....
 
 # Developer: Setup & Install
 
-1. Fork repo
+1. Ensure Python3 is downloaded on your machine
 
-2. pip install pipenv
+2. Fork the repo, navigate to local folder in terminal
 
-3. pipenv shell
+3. Only need to run this command once for initial install.
 
-4. pipenv install pip
+<code>pip install pipenv</code>
 
-5. export FLASK_APP=web_app
+4. pipenv shell (boot into virtual environment)
 
-6. export FLASK_ENV=developer
+5. pipenv install
 
-7. flask run
+6. export FLASK_APP=web_app
+
+7. export FLASK_ENV=developer
+
+8. flask run
 
 Should now be running on http://127.0.0.1:5000/
 

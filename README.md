@@ -47,16 +47,28 @@ Description here....
 
 <code>pip install pipenv</code>
 
-4. pipenv shell (boot into virtual environment)
+4. Boot into your local pipenv virtual environment.
 
-5. pipenv install
+<code>pipenv shell</code>
 
-6. export FLASK_APP=web_app
+5. Install the packages in the Pipfile to your virtual environment.
 
-7. export FLASK_ENV=developer
+<code>pipenv install</code>
 
-8. flask run
+6. Pointer to Flask App
 
-Should now be running on http://127.0.0.1:5000/
+<code>export FLASK_APP=web_app</code>
+
+7. Debug code more easily in developer mode.
+
+<code>export FLASK_ENV=developer</code>
+
+8. Now run the application on your local server.
+
+<code>flask run</code>
+
+#### Final 
+
+<bold>Should now be running on http://127.0.0.1:5000/</bold>
 
 

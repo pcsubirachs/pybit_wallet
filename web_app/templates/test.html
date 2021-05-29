@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Primary Meta Tags -->
+<title>
+    Bitcoin Wallet Generator
+</title>
+
+
+</head>
+<body>
+    
+    <form action="http://127.0.0.1:5000/test" method="POST">
+        <input onclick="myFunction()" class="btn btn-outline-info" type="submit" value="Generate" id="calc_btn" />
+
+      <p><strong>Seed: </strong>{{seed}}</p>
+      <p><strong>Priv Key: </strong>{{private_key}}</p>
+      <p><strong>Pub Key: </strong>{{public_key}}</p>
+      <p><strong>Address: </strong>{{address}}</p>
+
+    </form>
+
+    
+      <!--<script>
+        function myFunction() {
+          var x = document.getElementById("myDIV");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>-->                     
+
+</body>
+</html>

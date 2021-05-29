@@ -3,6 +3,9 @@ from flask import Blueprint, jsonify, request, render_template, current_app
 from bitcoin import *
 from web_app.make_address import make_address
 from web_app.make_address import bp
+from web_app.create_btc_wallet import create_wallet
+import requests
+from bs4 import BeautifulSoup
 
 #
 # ROUTING
@@ -24,7 +27,7 @@ def index():
 
 @this.route("/", methods=['POST', 'GET'])
 def brain():
-    
+
     #user input here
     phrase = request.form['user_phrase']
     # generate private key from input
@@ -35,6 +38,19 @@ def brain():
     brain = pubtoaddr(pub_key_brain)
 
     return render_template('index.html', private_key=private_key, public_key=public_key, brain=brain)
+
+@this.route("/test", methods=['POST','GET'])
+def test():
+
+    cw = create_wallet()
+
+    seed=cw[0] 
+    private_key=cw[1]
+    public_key=cw[2] 
+    address=cw[3]
+
+    #return render_template('test.html', message = ("Yooo: " + seed + private_key + public_key + address))
+    return render_template('test.html', seed=seed, private_key=private_key, public_key=public_key, address=address)
 
 @this.route("/fknabt", methods=['POST', 'GET'])
 def jinja():

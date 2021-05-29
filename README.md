@@ -43,7 +43,7 @@ Description here....
 
 2. Fork the repo, navigate to local folder in terminal
 
-3. Only need to run this command once for initial install.
+3. Install pipenv on your computer using pip. Only need to run this command once for initial install.
 
 <code>pip install pipenv</code>
 

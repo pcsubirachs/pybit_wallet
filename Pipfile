@@ -8,12 +8,10 @@ verify_ssl = true
 [packages]
 pybitcoin = "*"
 python-dotenv = "*"
-flask-sqlalchemy = "*"
-flask-migrate = "*"
 jinja2 = "*"
 gunicorn = "*"
 flask = "*"
-pip = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.8"

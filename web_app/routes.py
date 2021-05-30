@@ -15,7 +15,7 @@ this = Blueprint("this", __name__)
 
 @this.route("/", methods=['POST', 'GET'])
 def index():
-
+    """
     # generate private key
     private_key = random_key()
     # convert private key to public key
@@ -24,6 +24,16 @@ def index():
     address = pubtoaddr(public_key)
 
     return render_template('index.html', private_key=private_key, public_key=public_key, address=address)
+    """
+    cw = create_wallet()
+
+    seed=cw[0] 
+    private_key=cw[1]
+    public_key=cw[2] 
+    address=cw[3]
+
+    #return render_template('test.html', message = ("Yooo: " + seed + private_key + public_key + address))
+    return render_template('index.html', seed=seed, private_key=private_key, public_key=public_key, address=address)
 
 @this.route("/", methods=['POST', 'GET'])
 def brain():
@@ -41,16 +51,10 @@ def brain():
 
 @this.route("/test", methods=['POST','GET'])
 def test():
-
-    cw = create_wallet()
-
-    seed=cw[0] 
-    private_key=cw[1]
-    public_key=cw[2] 
-    address=cw[3]
-
-    #return render_template('test.html', message = ("Yooo: " + seed + private_key + public_key + address))
-    return render_template('test.html', seed=seed, private_key=private_key, public_key=public_key, address=address)
+    if request.method == "POST":
+        todo = request.form.get("todo")
+        print(todo)
+    return render_template('test.html')
 
 @this.route("/fknabt", methods=['POST', 'GET'])
 def jinja():

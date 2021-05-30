@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<!-- Primary Meta Tags -->
-<title>
-    Bitcoin Wallet Generator
-</title>
-
-
+    <title>GFG</title>
 </head>
 <body>
-    
-    <form action="http://127.0.0.1:5000/test" method="POST">
-        <input onclick="myFunction()" class="btn btn-outline-info" type="submit" value="Generate" id="calc_btn" />
-
-      <p><strong>Seed: </strong>{{seed}}</p>
-      <p><strong>Priv Key: </strong>{{private_key}}</p>
-      <p><strong>Pub Key: </strong>{{public_key}}</p>
-      <p><strong>Address: </strong>{{address}}</p>
-
+  <form method="post" id="todo-form">
+        <input type="text" name="todo" id="todo">
+        <button type="submit">submit</button>
     </form>
-
-    
-      <!--<script>
-        function myFunction() {
-          var x = document.getElementById("myDIV");
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
+  
+        <!--Jquery Cdn -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" 
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+          crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+    $(document).on('submit','#todo-form',function(e)
+                   {
+      console.log('hello');
+      e.preventDefault();
+      $.ajax({
+        type:'POST',
+        url:'/',
+        data:{
+          todo:$("#todo").val()
+        },
+        success:function()
+        {
+          alert('saved');
         }
-        </script>-->                     
-
+      })
+    });
+  </script>
+  
 </body>
 </html>

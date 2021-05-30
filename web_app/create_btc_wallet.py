@@ -36,5 +36,5 @@ def create_wallet():
 #print("Public Key: ", pub_key)
 #print("Address: ", address)
 
-cw = create_wallet()
-print(cw[0])
+#cw = create_wallet()
+#print(cw[0])

@@ -1,3 +1,5 @@
+# pybitcoin implementation
+
 from bitcoin import *
 
 """

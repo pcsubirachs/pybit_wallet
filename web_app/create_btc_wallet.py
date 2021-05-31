@@ -1,4 +1,5 @@
 # create_btc_wallet.py
+# pywallet implementation
 
 from pywallet import wallet
 

@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 
 this = Blueprint("this", __name__)
 
-@this.route("/", methods=['POST', 'GET'])
+@this.route("/#simple", methods=['POST', 'GET'])
 def index():
     """
     # generate private key
@@ -48,6 +48,35 @@ def brain():
     brain = pubtoaddr(pub_key_brain)
 
     return render_template('index.html', private_key=private_key, public_key=public_key, brain=brain)
+
+@this.route("/", methods=['POST', 'GET'])
+def multi_sig():
+
+    cw_1 = create_wallet()
+    cw_2 = create_wallet()
+    cw_3 = create_wallet()
+
+    seed_1=cw_1[0]
+    private_key_1=cw_1[1]
+    public_key_1=cw_1[2]
+    address_1=cw_1[3] 
+
+    seed_2=cw_2[0]
+    private_key_2=cw_2[1]
+    public_key_2=cw_2[2]
+    address_2=cw_2[3] 
+
+    seed_3=cw_3[0]
+    private_key_3=cw_3[1]
+    public_key_3=cw_3[2]
+    address_3=cw_3[3]
+
+    return render_template('index.html', seed_1=seed_1, private_key_1=private_key_1, public_key_1=public_key_1, address_1=address_1,
+                            seed_2=seed_2, private_key_2=private_key_2, public_key_2=public_key_2, address_2=address_2,
+                            seed_3=seed_3, private_key_3=private_key_3, public_key_3=public_key_3, address_3=address_3 )
+
+
+
 
 @this.route("/test", methods=['POST','GET'])
 def test():

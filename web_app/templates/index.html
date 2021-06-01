@@ -205,7 +205,7 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                   
                                       </form> 
 
-                                        <form action="http://127.0.0.1:5000/" method="POST">
+                                        <form action="/" method="POST" id=tabs-text-1>
                                             <input class="btn btn-outline-info" type="submit" value="Generate"/>
                                             <br><br>
                                             <button type="button" class="trigger btn btn-outline-info">Show & Hide</button>
@@ -255,7 +255,7 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                         <div class="mb-3">
                                             <label class="my-1 me-2" for="inlineFormCustomSelectPref">Choose N wallets needed to sign.</label>
                                             <select class="form-select" id="inlineFormCustomSelectPref" aria-label="Default select example">
-                                                <option selected>...</option>
+                                                <option selected>2</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -267,7 +267,7 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                         <div class="mb-3">
                                             <label class="my-1 me-2" for="inlineFormCustomSelectPref">Choose K wallets in total.</label>
                                             <select class="form-select" id="inlineFormCustomSelectPref" aria-label="Default select example">
-                                                <option selected>...</option>
+                                                <option selected>3</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -276,7 +276,8 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                             </select>
                                         </div>
 
-                                        <button class="btn btn-outline-info" type="button">Generate</button>
+                                      <form action="http://127.0.0.1:5000/" method="POST" id=tabs-text-2>
+                                        <input class="btn btn-outline-info" type="submit" value="Generate"/>
                                         
                                         <br><br>
 
@@ -284,36 +285,44 @@ $('#myTab a[href="' + hash + '"]').tab('show');
 
                                         <div class="toggle_container" style="display:none">
                                             <br>
-                                          
-                                            <div class="alert alert-info" role="alert">
-                                                <strong>Private Key #1 :</strong> {priv}
+                                            <div class="alert alert-info" role="alert" value="...">
+                                                <strong>Seed #1 :</strong> {{ seed_1 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Public Key #1 :</strong> {pub}
+                                                <strong>Private Key #1 :</strong> {{ private_key_1 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Bitcoin Wallet Address #1 :</strong> {btc_add}
+                                                <strong>Public Key #1 :</strong> {{ public_key_1 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Private Key #2 :</strong> {priv}
+                                                <strong>Bitcoin Wallet Address #1 :</strong> {{ address_1 }}
+                                            </div>
+                                            <div class="alert alert-info" role="alert" value="...">
+                                                <strong>Seed #2 :</strong> {{ seed_2 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Public Key #2 :</strong> {pub}
+                                                <strong>Private Key #2 :</strong> {{ private_key_2 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Bitcoin Wallet Address #2 :</strong> {btc_add}
+                                                <strong>Public Key #2 :</strong> {{ public_key_2 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Private Key #3 :</strong> {priv}
+                                                <strong>Bitcoin Wallet Address #2 :</strong> {{ address_2 }}
+                                            </div>
+                                            <div class="alert alert-info" role="alert" value="...">
+                                                <strong>Seed #3 :</strong> {{ seed_3 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Public Key #3 :</strong> {pub}
+                                                <strong>Private Key #3 :</strong> {{ private_key_3 }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Bitcoin Wallet Address #3 :</strong> {btc_add}
+                                                <strong>Public Key #3 :</strong> {{ public_key_3 }}
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Bitcoin Wallet Address #3 :</strong> {{ address_3 }}
                                             </div>
                                         </div>
-
+                                      </form>
                                     </div>
                                     <div class="tab-pane fade" id="tabs-text-3" role="tabpanel"
                                         aria-labelledby="tabs-text-3-tab">

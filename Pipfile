@@ -12,6 +12,7 @@ jinja2 = "*"
 gunicorn = "*"
 flask = "*"
 beautifulsoup4 = "*"
+pywallet = "*"
 
 [requires]
 python_version = "3.8"

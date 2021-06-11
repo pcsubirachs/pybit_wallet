@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 
 this = Blueprint("this", __name__)
 
-@this.route("/#simple", methods=['POST', 'GET'])
+@this.route("/", methods=['POST', 'GET'])
 def index():
     """
     # generate private key

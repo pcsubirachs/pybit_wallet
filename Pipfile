@@ -13,6 +13,7 @@ gunicorn = "*"
 flask = "*"
 beautifulsoup4 = "*"
 pywallet = "*"
+pycoin = "*"
 
 [requires]
 python_version = "3.8"

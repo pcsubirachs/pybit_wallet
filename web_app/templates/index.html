@@ -56,20 +56,33 @@
 
 <!-- to stay on active tab on generate-->
 <script>
-  $('#myTab a').click(function(e) {
-  e.preventDefault();
+if (location.hash) {
+  $('a[href=\'' + location.hash + '\']').tab('show');
+}
+var activeTab = localStorage.getItem('activeTab');
+if (activeTab) {
+  $('a[href="' + activeTab + '"]').tab('show');
+}
+
+$('body').on('click', 'a[data-toggle=\'tab\']', function (e) {
+  e.preventDefault()
+  var tab_name = this.getAttribute('href')
+  if (history.pushState) {
+    history.pushState(null, null, tab_name)
+  }
+  else {
+    location.hash = tab_name
+  }
+  localStorage.setItem('activeTab', tab_name)
+
   $(this).tab('show');
+  return false;
 });
-
-// store the currently selected tab in the hash value
-$("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
-  var id = $(e.target).attr("href").substr(1);
-  window.location.hash = id;
+$(window).on('popstate', function () {
+  var anchor = location.hash ||
+    $('a[data-toggle=\'tab\']').first().attr('href');
+  $('a[href=\'' + anchor + '\']').tab('show');
 });
-
-// on load of the page: switch to the currently selected tab
-var hash = window.location.hash;
-$('#myTab a[href="' + hash + '"]').tab('show');
 </script>
 
 </head>
@@ -89,7 +102,7 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                         <div class="bootstrap-big-icon d-none d-lg-block">
                             <svg xmlns="http://www.w3.org/2000/svg" width="700" height="622" class="d-block my-1"
                                 viewBox="0 0 118 94" role="img">
-                                <title>Bootstrap</title>
+                                <title>BTC Wallet Generator</title>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
                                     fill="currentColor"></path>
@@ -157,21 +170,8 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                         aria-selected="false">Brain Phrase</a>
                                 </li>
                             </ul>
-                          <!--
-                            <ul class="nav nav-tabs" id="myTab">
-                              <li class="active"><a href="#home">Home</a></li>
-                              <li><a href="#profile">Profile</a></li>
-                              <li><a href="#messages">Messages</a></li>
-                              <li><a href="#settings">Settings</a></li>
-                            </ul>
-                            
-                            <div class="tab-content">
-                              <div class="tab-pane active" id="home">home</div>
-                              <div class="tab-pane" id="profile">profile</div>
-                              <div class="tab-pane" id="messages">messages</div>
-                              <div class="tab-pane" id="settings">settings</div>
-                            </div>-->
-                            
+    
+        
                         </div>
                         <!-- End of Tab Nav -->
                         <!-- Tab Content --> 
@@ -187,22 +187,7 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                             key using a SHA256 one-way cryptographic algorithm. A bitcoin wallet is a compressed
                                             form of your public key.
                                         </p>
-    
-                                        <!--<button class="btn btn-outline-info" type="button">Generate</button>
 
-                                        <form action="/test" method="POST">
-        
-                                          <input class="trigger" type="submit" value="Generate"/>
-                                  
-                                          <button type="button" class="trigger">Show & Hide</button>
-                                          <div class="toggle_container" style="display:none">
-                                              <p><strong>Seed: </strong>{{seed}}</p>
-                                              <p><strong>Priv Key: </strong>{{private_key}}</p>
-                                              <p><strong>Pub Key: </strong>{{public_key}}</p>
-                                              <p><strong>Address: </strong>{{address}}</p>
-                                          </div>-->
-                                  
-                                  
                                       </form> 
 
                                         <form action="/" method="POST" id=tabs-text-1>
@@ -226,57 +211,14 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                           </div>                   
                                         </form>
 
-                                        <!--<p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
-
-                                        <button onclick="myFunction()">Try it</button>
-                                                                              
-                                        <div id="myDIV">
-                                        This is my DIV element.
-                                        </div>
-
-                                        <script>
-                                        function myFunction() {
-                                          var x = document.getElementById("myDIV");
-                                          if (x.style.display === "none") {
-                                            x.style.display = "block";
-                                          } else {
-                                            x.style.display = "none";
-                                          }
-                                        }
-                                        </script>-->
-
 
                                     </div>
 
                                     <div class="tab-pane fade" id="tabs-text-2" role="tabpanel"
                                         aria-labelledby="tabs-text-2-tab">
-                                        <p>Create an N of K multi sig wallet.</p>
+                                        <p>Create a 2 of 3 multi sig wallet.</p>
 
-                                        <div class="mb-3">
-                                            <label class="my-1 me-2" for="inlineFormCustomSelectPref">Choose N wallets needed to sign.</label>
-                                            <select class="form-select" id="inlineFormCustomSelectPref" aria-label="Default select example">
-                                                <option selected>2</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="my-1 me-2" for="inlineFormCustomSelectPref">Choose K wallets in total.</label>
-                                            <select class="form-select" id="inlineFormCustomSelectPref" aria-label="Default select example">
-                                                <option selected>3</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </div>
-
-                                      <form action="http://127.0.0.1:5000/" method="POST" id=tabs-text-2>
+                                      <form action="/multisig" method="POST" id=tabs-text-2>
                                         <input class="btn btn-outline-info" type="submit" value="Generate"/>
                                         
                                         <br><br>
@@ -328,7 +270,7 @@ $('#myTab a[href="' + hash + '"]').tab('show');
                                         aria-labelledby="tabs-text-3-tab">
                                         <p>A brain phrase wallet allows you to use phrase memorization to create a wallet and 
                                             cross borders with billions in your head.</p>
-                                      <form action="/" method="POST">      
+                                      <form action="/brain" method="POST">      
                                         <div class="mb-3">
                                             <textarea class="form-control" name="user_phrase" placeholder="Enter your unique phrase..." id="exampleFormControlTextarea1" rows="4"></textarea>
                                             
@@ -336,19 +278,22 @@ $('#myTab a[href="' + hash + '"]').tab('show');
 
                                         </div>
                                         
-                                            <input class="btn btn-outline-info" type="submit" value="Generate" id="calc_btn" />
+                                            <input class="btn btn-outline-info" type="submit" value="Generate"/>
                                             <br><br>
                                             <button type="button" class="trigger btn btn-outline-info">Show & Hide</button>
                                           <div class="toggle_container" style="display:none">
                                             <br>
-                                            <div class="alert alert-info" role="alert" value="...">
-                                              <strong>Private Key :</strong> {{ private_key }}
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>Brain Phrase :</strong> {{ phrase }}
+                                              </div>  
+                                            <div class="alert alert-info" role="alert">
+                                              <strong>Private Key :</strong> {{ priv_key_brain }}
                                             </div>                                      
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Public Key :</strong> {{ public_key }}
+                                                <strong>Public Key :</strong> {{ pub_key_brain }}
                                             </div>
                                             <div class="alert alert-info" role="alert">
-                                                <strong>Bitcoin Wallet Address :</strong> {{ address }}
+                                                <strong>Bitcoin Wallet Address :</strong> {{ add_brain }}
                                             </div>
                                           </div>  
                                       </form>

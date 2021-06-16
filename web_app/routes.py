@@ -35,21 +35,21 @@ def index():
     #return render_template('test.html', message = ("Yooo: " + seed + private_key + public_key + address))
     return render_template('index.html', seed=seed, private_key=private_key, public_key=public_key, address=address)
 
-@this.route("/", methods=['POST', 'GET'])
+@this.route("/brain", methods=['POST', 'GET'])
 def brain():
 
     #user input here
     phrase = request.form['user_phrase']
     # generate private key from input
-    priv_key = sha256(phrase)
+    priv_key_brain = sha256(phrase)
     # generate public key from your private key
-    pub_key = privtopub(priv_key_brain)
+    pub_key_brain = privtopub(priv_key_brain)
     # then create a readable Bitcoin address
-    brain = pubtoaddr(pub_key_brain)
+    add_brain = pubtoaddr(pub_key_brain)
 
-    return render_template('index.html', private_key=private_key, public_key=public_key, brain=brain)
+    return render_template('index.html', phrase=phrase, priv_key_brain=priv_key_brain, pub_key_brain=pub_key_brain, add_brain=add_brain)
 
-@this.route("/", methods=['POST', 'GET'])
+@this.route("/multisig", methods=['POST', 'GET'])
 def multi_sig():
 
     cw_1 = create_wallet()
@@ -72,11 +72,8 @@ def multi_sig():
     address_3=cw_3[3]
 
     return render_template('index.html', seed_1=seed_1, private_key_1=private_key_1, public_key_1=public_key_1, address_1=address_1,
-                            seed_2=seed_2, private_key_2=private_key_2, public_key_2=public_key_2, address_2=address_2,
-                            seed_3=seed_3, private_key_3=private_key_3, public_key_3=public_key_3, address_3=address_3 )
-
-
-
+                                        seed_2=seed_2, private_key_2=private_key_2, public_key_2=public_key_2, address_2=address_2,
+                                        seed_3=seed_3, private_key_3=private_key_3, public_key_3=public_key_3, address_3=address_3)
 
 @this.route("/test", methods=['POST','GET'])
 def test():

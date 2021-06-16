@@ -23,19 +23,23 @@
 
 ## How it Works
 
-Use this app to generate simple original, multi-sig or brain phrase Bitcoin wallets.
+Use this app to generate simple original, multi-sig or brain phrase Bitcoin wallets. *WARNING* DO NOT USE THESE WALLETS TO SEND MONEY TO. This app is experimental ONLY.
 
 ### Simple Wallet
 
-Description here...
+The simple wallet generates a bitcoin wallet with a seed phrase, private key, public key, and a bitcoin 
+wallet address. A seed phrase allows you to backup your Bitcoin from anywhere. 
+A private key is derived from your seed. A public key is derived from your private
+key using a SHA256 one-way cryptographic algorithm. A bitcoin wallet is a compressed
+form of your public key.
 
 ### Multi-Sig Wallet
 
-Description here...
+A 2 of 3 multi signature wallet allows the user to create 3 addresses, where 2 are needed for spending a transaction.
 
 ## Brain Phrase
 
-Description here....
+A brain phrase wallet allows you to use phrase memorization to create a wallet and cross borders with billions in your head. Install and run this app locally to recover your funds.
 
 # Developer: Setup & Install
 

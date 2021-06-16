@@ -10,7 +10,7 @@
 
 <img src="https://github.com/pcsubirachs/pybit_wallet/blob/main/media/simple.jpeg" alt="drawing" align="middle" width="800"/>
 
-### Create a K of N multi-sig wallet
+### Create a 2 of 3 multi-sig wallet
 
 <img src="https://github.com/pcsubirachs/pybit_wallet/blob/main/media/K_of_N.jpeg" alt="drawing" align="middle" width="800"/>
 

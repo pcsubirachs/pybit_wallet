@@ -208,6 +208,7 @@ $(window).on('popstate', function () {
                                             <div class="alert alert-info" role="alert">
                                                 <strong>Bitcoin Wallet Address :</strong> {{ address }}
                                             </div>
+                                            <img class="center"src="{{ qrcode(address)  }}">
                                           </div>                   
                                         </form>
 
@@ -239,6 +240,7 @@ $(window).on('popstate', function () {
                                             <div class="alert alert-info" role="alert">
                                                 <strong>Bitcoin Wallet Address #1 :</strong> {{ address_1 }}
                                             </div>
+                                            <img class="center"src="{{ qrcode(address_1)  }}"><br><br>
                                             <div class="alert alert-info" role="alert" value="...">
                                                 <strong>Seed #2 :</strong> {{ seed_2 }}
                                             </div>
@@ -251,6 +253,7 @@ $(window).on('popstate', function () {
                                             <div class="alert alert-info" role="alert">
                                                 <strong>Bitcoin Wallet Address #2 :</strong> {{ address_2 }}
                                             </div>
+                                            <img class="center"src="{{ qrcode(address_2)  }}"><br><br>
                                             <div class="alert alert-info" role="alert" value="...">
                                                 <strong>Seed #3 :</strong> {{ seed_3 }}
                                             </div>
@@ -263,6 +266,7 @@ $(window).on('popstate', function () {
                                             <div class="alert alert-info" role="alert">
                                                 <strong>Bitcoin Wallet Address #3 :</strong> {{ address_3 }}
                                             </div>
+                                            <img class="center"src="{{ qrcode(address_3)  }}"><br>
                                         </div>
                                       </form>
                                     </div>
@@ -295,6 +299,7 @@ $(window).on('popstate', function () {
                                             <div class="alert alert-info" role="alert">
                                                 <strong>Bitcoin Wallet Address :</strong> {{ add_brain }}
                                             </div>
+                                            <img class="center"src="{{ qrcode(add_brain)  }}"> <br>
                                           </div>  
                                       </form>
 

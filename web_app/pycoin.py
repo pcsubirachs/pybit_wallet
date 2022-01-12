@@ -1,6 +1,7 @@
 #from pycoin.symbols.btc import network
 from bitcoin import *
 from pycoin.networks.registry import network_for_netcode
+from pycoin import *
 
 network = network_for_netcode("BTC")
 
